@@ -1,17 +1,29 @@
-import { Plus } from "lucide-react";
+import { Calendar, MapPin, Settings2 } from "lucide-react";
+import { Button } from "../../components/button";
 
-interface DestinationAnDateHeaderProps {
-    openCreateActivityModal: () => void
-}
 
-export function DestinationAnDateHeader(props: DestinationAnDateHeaderProps){
+export function DestinationAndDateHeader(){
     return(
-        <div className="flex justify-between">
-            <h1 className="text-3xl font-semibold">Atividades</h1>
-            <button onClick={props.openCreateActivityModal} className="flex items-center font-medium bg-lime-300 text-lime-950 gap-2 px-5 py-2 rounded-lg hover:bg-lime-400">
-                <Plus className="size-5" />
-                Cadastrar atividade
-            </button>
+        <div className=" bg-zinc-900 px-6 h-16 rounded-xl shadow-shape flex items-center justify-between">
+
+                <div className="flex items-center gap-2">
+                    <MapPin className="size-5 text-zinc-400" />
+                    <span className="text-zinc-100">Belo Horizonte, Brasil</span>
+                </div>
+
+                <div className="flex items-center gap-5">
+                    <div className="flex items-center gap-2">
+                        <Calendar className="size-5 text-zinc-400" />
+                        <span className="outline-none text-zinc-100 bg-transparent">17 a 23 de Agosto</span>
+                    </div>
+
+                    <div className="w-px h-6 bg-zinc-800" />
+
+                    <Button variant="secondary">
+                         Alterar local/data
+                        <Settings2 className="size-5 text-zinc-200 " />
+                    </Button>
+                </div>
         </div>
     )
 }
